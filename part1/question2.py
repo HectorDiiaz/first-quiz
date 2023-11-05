@@ -19,3 +19,9 @@ swapper = None
 
 def run_swapper(list_of_tuples):
   return list(map(swapper, list_of_tuples))
+
+
+def swapper(tupla):
+  x= tupla[0]
+  y=tupla[1]
+  return (y,x)

@@ -26,8 +26,39 @@
 # formulas and their outputs in the test file, `question3_test.py`.
 
 # This function should return an oven instance!
+
+class HornoMagico:
+
+  def __init__(self):
+    self.ingredientes =[]
+    self.temperature=0
+
+  def add(self, item):
+    self.ingredientes.append(item)
+
+  def freeze(self):
+    self.temperature=-100
+  
+  def boil(self):
+    self.temperature=5000
+  
+  def wait(self):
+    pass
+
+  def get_output(self):
+    result=""
+    if self.ingredientes == ["lead", "mercury"] and self.temperature == 5000:
+      result="gold"
+
+    if self.ingredientes == ["water", "air"] and self.temperature == -100:
+      result="snow"
+
+    if self.ingredientes == ["cheese", "dough", "tomato"]:
+      result="pizza"
+    return result
+
 def make_oven():
-  None
+  return HornoMagico()
 
 def alchemy_combine(oven, ingredients, temperature):
   
@@ -42,3 +73,4 @@ def alchemy_combine(oven, ingredients, temperature):
     oven.wait()
 
   return oven.get_output()
+
